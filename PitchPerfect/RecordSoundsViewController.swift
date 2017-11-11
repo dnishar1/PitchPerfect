@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+ 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     func configureUI(recording: Bool){
