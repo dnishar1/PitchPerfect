@@ -15,7 +15,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
     // MARK: Alerts
     
     struct Alerts {
-        static let DismissAlert = "Dismiss" 
+        static let DismissAlert = "Dismiss"
         static let RecordingDisabledTitle = "Recording Disabled"
         static let RecordingDisabledMessage = "You've disabled this app from recording your microphone. Check Settings."
         static let RecordingFailedTitle = "Recording Failed"
@@ -39,7 +39,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             audioFile = try AVAudioFile(forReading: recordedAudioURL as URL)
         } catch {
             showAlert(Alerts.AudioFileError, message: String(describing: error))
-        }        
+        }
     }
     
     func playSound(rate: Float? = nil, pitch: Float? = nil, echo: Bool = false, reverb: Bool = false) {
@@ -125,7 +125,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         }
         
         configureUI(.notPlaying)
-                        
+        
         if let audioEngine = audioEngine {
             audioEngine.stop()
             audioEngine.reset()
@@ -141,7 +141,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
     }
     
     // MARK: UI Functions
-
+    
     func configureUI(_ playState: PlayingState) {
         switch(playState) {
         case .playing:
@@ -161,10 +161,11 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
         echoButton.isEnabled = enabled
         reverbButton.isEnabled = enabled
     }
-
+    
     func showAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: Alerts.DismissAlert, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }
+
