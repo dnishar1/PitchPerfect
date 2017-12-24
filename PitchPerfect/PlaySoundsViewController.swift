@@ -34,17 +34,17 @@ class PlaySoundsViewController: UIViewController {
     @IBAction func playSoundForButton(_ sender: UIButton) {
             switch(ButtonType(rawValue: sender.tag)!) {
             case .slow:
-                playSound(rate: 0.5)
+                playSound(rate: 0.5) // Rates can be changed based on the preference
             case .fast:
-                playSound(rate: 1.5)
+                playSound(rate: 1.5) // Rates can be changed based on the preference
             case .chipmunk:
-                playSound(pitch: 1000)
+                playSound(pitch: 1000) // Rates can be changed based on the preference
             case .vader:
-                playSound(pitch: -1000)
+                playSound(pitch: -1000) // Rates can be changed based on the preference
             case .echo:
-                playSound(echo: true)
+                playSound(echo: true) // Rates can be changed based on the preference
             case .reverb:
-                playSound(reverb: true)
+                playSound(reverb: true) // Rates can be changed based on the preference
             }
             
             configureUI(.playing)
